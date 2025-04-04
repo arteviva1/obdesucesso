@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OB de Sucesso - Nova Era</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(180deg, #000000 0%, #111111 100%);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: "OB DE SUCESSO ";
+      position: fixed;
+      top: 0;
+      left: 0;
+      font-size: 12vw;
+      white-space: nowrap;
+      color: rgba(255,255,255,0.02);
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      animation: scrollBg 60s linear infinite;
+    }
+
+    @keyframes scrollBg {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    header {
+      padding: 40px 20px 20px;
+      text-align: center;
+      background: #000000;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      color: lime;
+      text-shadow: 0 0 20px green, 0 0 40px red;
+      animation: pulseTitle 2s infinite alternate;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: red;
+      margin-top: 10px;
+      text-shadow: 0 0 10px red;
+    }
+
+    @keyframes pulseTitle {
+      from { text-shadow: 0 0 20px lime; }
+      to { text-shadow: 0 0 40px red; }
+    }
+
+    /* 🎥 VIDEO EM FORMATO QUADRADO */
+    .video-box {
+      position: relative;
+      width: 100%;
+      max-width: 400px; /* Igual ao menu */
+      margin: 30px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 30px lime;
+      aspect-ratio: 1 / 1; /* Formato quadrado */
+    }
+
+    .video-box iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .menu a {
+      background: linear-gradient(90deg, #111, #222);
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 2px solid lime;
+      transition: 0.3s;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 10px #00ff00;
+    }
+
+    .menu a:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #00ff00, red);
+      color: black;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+      background-color: #111;
+      color: #888;
+    }
+
+    .particle {
+      position: fixed;
+      top: -30px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      color: #0f0;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
+    }
+
+    .message-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.85);
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px lime;
+      color: white;
+      font-size: 1.2rem;
+      z-index: 999;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .alerta-vagas {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, #111, #222);
+      color: white;
+      padding: 20px 25px;
+      border-radius: 0 0 20px 20px;
+      font-size: 1rem;
+      z-index: 1000;
+      border: 2px solid lime;
+      box-shadow: 0 0 10px #00ff00;
+      text-align: center;
+      max-width: 90%;
+      transition: opacity 1s ease;
+    }
+
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="alerta-vagas" id="alertaVagas">
+    🚨 <strong>MENTORIA OB DE SUCESSO VAGAS ABERTAS!</strong><br>
+    🧠 Comece finalmente a lucrar com Opções Binárias e seja um trader consistente! 🚀
+  </div>
+
+  <header>
+    <h1>OB DE SUCESSO</h1>
+    <p>Dominando as Opções Binárias com Estilo</p>
+  </header>
+
+  <div class="video-box">
+    <iframe src="https://www.youtube.com/embed/S3kyKc3FDKM?autoplay=1&mute=1&loop=1&playlist=S3kyKc3FDKM&controls=0" allowfullscreen></iframe>
+  </div>
+
+  <div class="menu">
+    <a href="#" data-msg="Curso gratuito para iniciantes!" data-link="https://www.youtube.com/@ObdeSucesso/playlists">📚 Curso Gratuito</a>
+    <a href="#" data-msg="Mentoria exclusiva com traders experientes!" data-link="https://seu-link-mentoria.com">🎯 Mentoria VIP</a>
+    <a href="#" data-msg="Entre no nosso grupo de sinais no Telegram!" data-link="https://seu-link-telegram.com">📲 Canal no Telegram</a>
+    <a href="#" data-msg="Siga nosso conteúdo exclusivo no TikTok e veja estratégias em vídeo!" data-link="https://www.tiktok.com/@seudominio">🎵 TikTok Oficial</a>
+  </div>
+
+  <div class="message-box" id="messageBox"></div>
+
+  <div class="footer">
+    Desenvolvido por <a href="https://wa.me/seunumero" style="color:lime; text-decoration:underline;" target="_blank">OB de Sucesso</a> © 2025 | OB de Sucesso
+  </div>
+
+  <script>
+    document.querySelectorAll('.menu a').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const msg = btn.dataset.msg;
+        const link = btn.dataset.link;
+
+        const box = document.getElementById("messageBox");
+        box.textContent = msg;
+        box.style.display = "block";
+
+        setTimeout(() => {
+          box.style.display = "none";
+          window.open(link, "_blank");
+        }, 3000);
+      });
+    });
+
+    const symbols = ['💰', '🤑', '💸', '$'];
+    function createParticle() {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.animationDuration = (Math.random() * 4 + 3) + 's';
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 7000);
+    }
+    setInterval(createParticle, 400);
+
+    setTimeout(() => {
+      const alerta = document.getElementById('alertaVagas');
+      if (alerta) {
+        alerta.classList.add('fade-out');
+        setTimeout(() => alerta.style.display = 'none', 1000);
+      }
+    }, 2000);
+  </script>
+
+</body>
+</html>
